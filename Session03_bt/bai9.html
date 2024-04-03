@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const mergeArrays = (...arrays) => {
+            if (arrays.length === 0) {
+                console.log("Không có mảng nào được truyền vào");
+                return [];
+            }
+
+            // Kiểm tra xem tất cả các mảng có cùng độ dài hay không
+            const length = arrays[0].length;
+            const isValid = arrays.every(array => array.length === length);
+            if (!isValid) {
+                console.log("Các mảng không có độ dài bằng nhau");
+                return [];
+            }
+
+            // Sử dụng map để tạo mảng chứa các mảng phần tử có cùng chỉ số
+            return arrays[0].map((_, index) => arrays.map(array => array[index]));
+            /*
+                for (let index = 0; index < length; index++) {
+                    // Tạo một mảng con để lưu các phần tử cùng chỉ số từ các mảng đầu vào
+                    const subArray = [];
+
+                    // Lặp qua mỗi mảng trong danh sách các mảng đầu vào
+                    for (let array of arrays) {
+                        // Lấy phần tử có chỉ số index từ mỗi mảng và đẩy vào mảng con
+                        subArray.push(array[index]);
+                    }
+
+                    // Đẩy mảng con vào mảng kết quả
+                    result.push(subArray);
+                }
+            */
+        };
+        console.log(mergeArrays([1, 2, 3], ['a', 'b', 'c'], [true, false, true]));
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const a = 1;
+        const array = [1,2,3];
+        // a = 2;
+        array.push(4);
+        // console.log(a);
+        console.log(array);
+        /*
+            Với console.log(a) trả về lỗi do a là kiểu tham trị, việc khai báo const khiến cho a không thể được khai báo lại nữa
+            còn với console.log(array) do array là kiểu tham chiếu, việc thêm phần tử vào mảng không thay đổi địa chỉ tham chiếu
+            nên không xảy ra lỗi
+        */
+    </script>
+</body>
+</html>
